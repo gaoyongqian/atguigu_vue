@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>03_模板解析_表达式_mvvm</title>
+</head>
+<body>
+
+<!--
+大括号表达式解析
+1）根据正则对象得到匹配出的表达式字符串：子匹配/RegExp.$1  name
+2）从data中取出表达式对应的属性值
+3）将属性值设置为文本节点的textContent
+-->
+
+<div id="test">
+    <p>{{name}}</p>
+</div>
+
+<script type="text/javascript" src="js/mvvm/compile.js"></script>
+<script type="text/javascript" src="js/mvvm/mvvm.js"></script>
+<script type="text/javascript" src="js/mvvm/observer.js"></script>
+<script type="text/javascript" src="js/mvvm/watcher.js"></script>
+
+<script type="text/javascript">
+    new MVVM({
+        el:'#test',
+        data:{
+            name:'feifei'
+        }
+    })
+</script>
+
+</body>
+</html>

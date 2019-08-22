@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<!--
+    1.引入Vue.js
+    2.创建Vue对象
+      el:指定根element(选择器)
+      data:初始化数据(页面可以访问)
+    3.双向数据绑定：v-model
+    4.显示数据： {{xxx}}
+    5.理解vue的mvvm实现
+
+    tip:
+        MVVM是Model-View-ViewModel的简写。它本质上就是MVC 的改进版。
+        MVVM 就是将其中的View 的状态和行为抽象化，让我们将视图 UI 和业务逻辑分开。
+-->
+
+<div id="app"> <!-- view -->
+    <input type="text" v-model="username">
+    <p>Hello {{username}}</p>
+</div>
+
+<script type="text/javascript" src="../resources/vue.js"></script>
+<script type="text/javascript">
+    //创建Vue实例
+    var vm = new Vue({ //配置对象
+        el: '#app', // element：选择器
+        data:{ //数据(model)
+            username: 'Vue!'
+        }
+    })
+</script>
+
+<!--
+MVVM
+ model：模型，数据对象（data）
+ view：视图，模板页面
+ viewModel：视图模型（Vue的实例）
+-->
+
+</body>
+</html>
